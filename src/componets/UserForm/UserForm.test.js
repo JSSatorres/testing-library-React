@@ -19,6 +19,7 @@ describe ('UserForm component',() => {
 
     userEvent.click(button)
     const hiddenDiv = await screen.findByText(/holi/i)
+
     // const hiddenDiv = await screen.getByText(/holi/i)
     expect(hiddenDiv).toBeInTheDocument()
     
@@ -36,6 +37,30 @@ describe ('UserForm component',() => {
     const hiddenDiv2 = await screen.findByText(/holi/i)
     
     expect(hiddenDiv2).not.toBeInTheDocument()
-    screen.debug()
+
+  })
+  it('should type input and call handleInputChange',async () => {
+    render(<UserForm />)
+  
+    const inputName = screen.getByLabelText('Nombre:');
+    userEvent.type(inputName,"pepe")
+    expect(inputName.value).toBe('pepe');
+
+
+  })
+  it('should submit the form when the field are completed',async () => {
+    render(<UserForm />)
+  
+    const button = screen.getByRole('button',{ name: /ver div/i })
+
+    userEvent.click(button)
+    const hiddenDiv = await screen.findByText(/holi/i)
+    // const hiddenDiv = await screen.getByText(/holi/i)
+    expect(hiddenDiv).toBeInTheDocument()
+    userEvent.click(button)
+    const hiddenDiv2 = await screen.findByText(/holi/i)
+    
+    expect(hiddenDiv2).not.toBeInTheDocument()
+
   })
 })
