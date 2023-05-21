@@ -1,5 +1,5 @@
 
-import UserForm from './componets/UserForm/UserForm';
+import UserForm from './componets/UserForm';
 
 function App() {
   return (
