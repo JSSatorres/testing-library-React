@@ -21,16 +21,16 @@ const UserForm = () => {
       {showDiv && <div> holi</div>}
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="nameLabel">
+          <label htmlFor="name">
             Nombre:
           </label>
-          <input type="text" name="name" value={formData.name} onChange={handleInputChange} />
+          <input type="text" name="name" id='name' value={formData.name} onChange={handleInputChange} />
         </div>
         <div>
-          <label htmlFor="emailLabel" >
+          <label htmlFor="email" >
             Correo electrónico:
           </label>
-          <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+          <input type="email" name="email" id='email' value={formData.email} onChange={handleInputChange} />
         </div>
         <button type="submit">Enviar</button>
       </form>
