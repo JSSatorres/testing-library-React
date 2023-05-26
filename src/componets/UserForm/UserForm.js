@@ -12,7 +12,7 @@ const UserForm = () => {
   }
 
   function handleSubmit(event) {
-    alert('Nombre: ' + formData.name + '\nCorreo electrónico: ' + formData.email);
+    alert('Nombre: ' + formData.name + '\nCorreo electrónico: ' + formData.email +'\n');
     event.preventDefault();
   }
   return (
