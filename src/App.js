@@ -1,12 +1,9 @@
+import React from 'react'
+import Router from './Router'
 
-import UserForm from './componets/UserForm';
 
 function App() {
-  return (
-    <div className="App">
-      <UserForm />
-    </div>
-  );
+  return ( <Router /> )
 }
 
-export default App;
+export default App
