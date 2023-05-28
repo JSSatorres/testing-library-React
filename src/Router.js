@@ -1,8 +1,9 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Layout from './Layout'
-// import { HomeFactory } from './pages/home/HomeFactory'
-// import NoMatch from './pages/noMatch'
+
+import Layout from './layout'
+import Home from './Pages/home'
+import NoMatch from './Pages/noMatch'
 // import AboutMe from './pages/aboutMe'
 // import ContactPage from './pages/contact'
 // import ProjectsPage from './pages/projectsPage'
@@ -11,11 +12,15 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    // children: [
-    //   {
-    //     path: '/',
-    //     element: HomeFactory.create(),
-    //   },
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+      {
+        path: '*',
+        element: <NoMatch />,
+      },
     //   {
     //     path: 'aboutme',
     //     element: <AboutMe />,
@@ -28,11 +33,7 @@ const router = createBrowserRouter([
     //     path: 'projects',
     //     element: <ProjectsPage />,
     //   },
-    //   {
-    //     path: '*',
-    //     element: <NoMatch />,
-    //   },
-    // ],
+    ],
   },
 ])
 
