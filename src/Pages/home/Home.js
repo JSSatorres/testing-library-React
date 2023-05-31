@@ -44,7 +44,7 @@ const Home = () => {
               <td className="px-6 py-4">{character.species}</td>
               <td className="px-6 py-4">{character.gender}</td>
               <td className='px-6 py-4'>
-                <Link to={`/characters/${character.name}`}>
+                <Link to={`/character/${character.id}`}>
                   <FaEye />
                 </Link>
               </td>
