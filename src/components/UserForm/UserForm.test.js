@@ -1,6 +1,6 @@
 /* eslint-disable testing-library/no-wait-for-side-effects */
 /* eslint-disable testing-library/no-debugging-utils */
-import {render, screen,waitFor} from '@testing-library/react'
+import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import UserForm from './UserForm'
 
@@ -20,9 +20,8 @@ describe ('UserForm component',() => {
   
     const button = screen.getByRole('button',{ name: /ver div/i })
 
-    await waitFor(() => {
-      userEvent.click(button)
-    })
+    await userEvent.click(button)
+   
     const hiddenDiv = await screen.findByText(/holi/i)
 
  
@@ -35,15 +34,12 @@ describe ('UserForm component',() => {
   
     const button = screen.getByRole('button',{ name: /ver div/i })
 
-    await waitFor(() => {
-      userEvent.click(button)
-    })
+    await userEvent.click(button)
+   
     const hiddenDiv = await screen.findByText(/holi/i)
     expect(hiddenDiv).toBeInTheDocument()
 
-    await waitFor(() => {
-      userEvent.click(button)
-    })
+    await  userEvent.click(button)
 
     const hiddenDiv2 = screen.queryByText(/holi/i)  
     expect(hiddenDiv2).not.toBeInTheDocument()
@@ -53,9 +49,8 @@ describe ('UserForm component',() => {
     render(<UserForm />)
   
     const inputName = screen.getByLabelText('Nombre:');
-    await waitFor(() => {
-      userEvent.type(inputName,"pepe")
-    })   
+    await userEvent.type(inputName,"pepe")
+  
     expect(inputName.value).toBe('pepe');
   })
 
@@ -64,14 +59,11 @@ describe ('UserForm component',() => {
   
     const button = screen.getByRole('button',{ name: /ver div/i })
 
-    await waitFor(() => {
-      userEvent.click(button)
-    })
+    await userEvent.click(button)  
     const hiddenDiv = await screen.findByText(/holi/i)
     expect(hiddenDiv).toBeInTheDocument()
-    await waitFor(() => {
-      userEvent.click(button)
-    })
+
+    await  userEvent.click(button)   
     const hiddenDiv2 = screen.queryByText(/holi/i)    
     expect(hiddenDiv2).not.toBeInTheDocument()
 
