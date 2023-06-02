@@ -1,27 +1,22 @@
 import { fetchData } from './fetchCharacter'
 
-describe('fetchData Service',() => {
-  
-  // global.fetch = jest.fn(() =>
-  //   Promise.resolve({
-  //     json: () => Promise.resolve({text: 'pass'}),
-  //   })
-  // );
-  // afterAll(()=>{
-  //   fetch.mockClear();
-  // })
-  global.fetch = jest.fn().mockResolvedValue({
-    json: () => Promise.resolve({ text: 'pass' }),
-  });
-  it('Should return a valid response', async () => {  
-    const DataResponse = await fetchData()
-    expect(fetch).toHaveBeenCalledTimes(1)
-    expect(DataResponse).toEqual({ text: 'pass' });
-  })
+test('fetchData function should return data for a valid id', async () => {
+  const mockData = { name: 'Rick', species: 'Human2' };
 
-  // it('Should return a Error when api is down',async () => {
-  //   fetchData.mockReturnValueOnce(new Error('ups'))    
-  //   const DataResponse = await fetchData()
-  //   expect(DataResponse).toBeInstanceOf(Error)
-  // })
-})
+  global.fetch = jest.fn().mockResolvedValue({
+    json: jest.fn().mockResolvedValue(mockData),
+  });
+
+  const data = await fetchData(1);
+
+  expect(global.fetch).toHaveBeenCalledWith('https://rickandmortyapi.com/api/character/1' );
+  expect(data).toEqual(mockData);
+});
+
+test('fetchData function should throw an error for an invalid id', async () => {
+  const mockError = new Error('Error al obtener los datos');
+
+  global.fetch = jest.fn().mockRejectedValue(mockError);
+
+  await expect(fetchData(999)).rejects.toThrow('Error al obtener los datos');
+});
