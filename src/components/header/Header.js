@@ -2,10 +2,10 @@ import React from 'react'
 
 const Header = () => {
   const handleLogin = () =>{
-    console.log('click login');
+    // console.log('click login');
   }
   const handleLogout = () =>{
-    console.log('click logout');
+    // console.log('click logout');
   }
   return (
     <header className="bg-gray-900 py-4">
