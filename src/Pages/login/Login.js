@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -8,11 +7,11 @@ const Login = () => {
   
 
   const handleChange = (event) => {
-    event.preventDefault();
     setDataForm({...dataForm,[event.target.name]:event.target.value});
   };
-
-  const handleLogin = () => {
+  
+  const handleLogin = (event) => {
+    event.preventDefault();
     console.log('dataForm:', dataForm);
   };
 
@@ -29,6 +28,7 @@ const Login = () => {
             type="text"
             id="username"
             value={dataForm.userName}
+            name='userName'
             onChange={handleChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
           />
@@ -41,6 +41,7 @@ const Login = () => {
           <input
             type="password"
             id="password"
+            name="password"
             value={dataForm.password}
             onChange={handleChange}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900"
