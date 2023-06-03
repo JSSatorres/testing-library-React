@@ -6,6 +6,7 @@ import Home from './Pages/home'
 import NoMatch from './Pages/noMatch'
 import CharacterCard from './components/characterCard'
 import Login from './Pages/login'
+import Register from './Pages/register/Register'
 
 const router = createBrowserRouter([
   {
@@ -16,10 +17,10 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
       },
-      // {
-      //   path: '/register',
-      //   element: <Home />,
-      // },
+      {
+        path: '/register',
+        element: <Register />,
+      },
       {
         path: '/login',
         element: <Login />,
