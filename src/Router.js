@@ -5,10 +5,7 @@ import Layout from './layout'
 import Home from './Pages/home'
 import NoMatch from './Pages/noMatch'
 import CharacterCard from './components/characterCard'
-
-// import AboutMe from './pages/aboutMe'
-// import ContactPage from './pages/contact'
-// import ProjectsPage from './pages/projectsPage'
+import Login from './Pages/login'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +16,14 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />,
       },
+      // {
+      //   path: '/register',
+      //   element: <Home />,
+      // },
+      {
+        path: '/login',
+        element: <Login />,
+      },
       {
         path: 'character/:id', // Ruta dinámica para el detalle del personaje
         element: <CharacterCard />,
@@ -27,18 +32,6 @@ const router = createBrowserRouter([
         path: '*',
         element: <NoMatch />,
       },
-    //   {
-    //     path: 'aboutme',
-    //     element: <AboutMe />,
-    //   },
-    //   {
-    //     path: 'contact',
-    //     element: <ContactPage />,
-    //   },
-    //   {
-    //     path: 'projects',
-    //     element: <ProjectsPage />,
-    //   },
     ],
   },
 ])
