@@ -46,3 +46,17 @@ import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
 ```
 
 [Enlace con mas info](https://github.com/Klerith/react-journal-material/tree/fin-seccion-20)
+
+## instalar standarJS 
+
+1. Instalaciones:
+```
+npm install standard --save-dev
+```
+
+2. Actualizar  __package.json__
+```
+ "eslintConfig": {
+    "extends":"./node_modules/standard/eslintrc.json"
+  }
+```
