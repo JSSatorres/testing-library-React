@@ -45,7 +45,7 @@ __jest.setup.js__
 import 'whatwg-fetch'; // <-- yarn add whatwg-fetch
 ```
 
-[Enlace con mas info](https://github.com/Klerith/react-journal-material/tree/fin-seccion-20)
+[Enlace con mas info](https://gist.github.com/Klerith/ca7e57fae3c9ab92ad08baadc6c26177)
 
 ## instalar standarJS 
 
