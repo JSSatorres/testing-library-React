@@ -9,5 +9,6 @@
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "semi": false,
+  "trailingComma": "none",
   "singleQuote": true
 }
