@@ -21,6 +21,7 @@ describe('Pruebas en fileUpload', () => {
     const url = await fileUpload(file)
     expect(typeof url).toBe('string')
 
+    // console.log(url);
     const segments = url.split('/')
     const imageId = segments[segments.length - 1].replace('.jpg', '')
 
@@ -30,7 +31,7 @@ describe('Pruebas en fileUpload', () => {
         resource_type: 'image'
       }
     )
-    console.log({ cloudResp })
+    // console.log({ cloudResp })
   })
 
   test('debe de retornar null', async () => {
