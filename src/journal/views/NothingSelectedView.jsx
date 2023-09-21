@@ -10,7 +10,6 @@ export const NothingSelectedView = () => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      justifyContent="center"
       sx={{
         minHeight: 'calc(100vh - 110px)',
         backgroundColor: 'primary.main',
