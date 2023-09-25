@@ -1,5 +1,8 @@
-# Instalación y configuracion de Jest + React Testing Library
-## En proyectos de React + Vite
+# Instalación y configuracion de Jest + React Testing Library en proyectos de React + Vite
+
+## Guias de instlacion 
+
+## Instalar jest
 
 1. Instalaciones:
 ```

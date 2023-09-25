@@ -6,6 +6,7 @@ import { getFirestore } from 'firebase/firestore/lite'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// TODO: create firebase
 const firebaseConfig = {
   apiKey: 'AIzaSyC9qM8LKYti4TZus0g00ISzMjudet-H2vg',
   authDomain: 'react-cursos-4368a.firebaseapp.com',
